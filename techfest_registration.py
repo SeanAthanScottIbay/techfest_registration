@@ -1,5 +1,5 @@
 print ("Welcome to SMIT TechFest!")
-print ("Event organized by Sean Athan Scott L. Ibay of APPDAET BTCS2\n")
+print ("Organized by Sean Athan Scott L. Ibay of APPDAET BTCS2\n")
 
 try:
     num_participants = int(input("How many participants will register? "))
@@ -46,3 +46,13 @@ if duplicates:
 
 else:
     print("\nNo duplicate names.")
+
+track_summary = { }
+
+for p in participants:
+    track = p["track"]
+    track_summary[track] = track_summary.get(track, 0) + 1
+
+print("\nParticipants per track: ")
+for track, count in track_summary.items():
+    print(f"{track}: {count}")
