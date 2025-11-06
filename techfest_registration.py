@@ -29,3 +29,20 @@ if len(unique_tracks) < 2:
 else:
     print("\nTracks offered in this event:")
     print(", ".join(unique_tracks))
+
+seen_names = set()
+duplicates = set()
+
+for p in participants:
+    name = p["name"]
+    if name in seen_names:
+        duplicates.add(name)
+    else:
+        seen_names.add(name)
+
+if duplicates:
+    for name in duplicates:
+        print (f"\nDuplicate name found: {name}")
+
+else:
+    print("\nNo duplicate names.")
